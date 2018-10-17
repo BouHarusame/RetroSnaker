@@ -32,8 +32,9 @@
 <script src="demo.js"></script>
     <script>
     // class
-    ! function(navigator) {
+    !function(navigator) {
         var userAgent = navigator.userAgent;
+        var isPc = null;
         documentElement = document.documentElement;
         if (userAgent.match(/micromessenger\/5/gi)) {
             documentElement.className += " mobile wx_mobile wx_mobile_5";
@@ -59,9 +60,10 @@
         if(!isPc){
               window.location.href='https://m.jb51.net/';
         } 
+        console.log(isPc);
     }(navigator);
     // meta
-    ! function(userAgent) {
+    !function(userAgent) {
         var screen_w = parseInt(window.screen.width),
             scale = screen_w / 640;
         if (/Android (\d+\.\d+)/.test(userAgent)) {
